@@ -14,12 +14,12 @@ const port = process.env.PORT || 8080
 app.use(compression())
 app.use(express.static(distDir, { extensions: ['html'] }))
 
-// Health check (for container platforms)
+// ヘルスチェック（コンテナ等の稼働監視用）
 app.get(['/healthz', '/_health', '/_ah/health'], (_req, res) => {
   res.status(200).send('ok')
 })
 
-// SPA fallback
+// SPA のためのフォールバック（任意のパスで index.html を返す）
 app.get('*', (_req, res) => {
   res.sendFile(path.join(distDir, 'index.html'))
 })

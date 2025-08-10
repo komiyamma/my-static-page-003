@@ -1,3 +1,4 @@
+// 新規タスクの入力と検証を担当するコンポーネント
 import React, { useState } from 'react'
 import styles from '../styles/TodoApp.module.css'
 
@@ -5,6 +6,7 @@ export default function TodoInput({ onAddTodo }) {
   const [text, setText] = useState('')
   const [error, setError] = useState(null)
 
+  // 入力検証（空文字と200文字超をブロック）
   const validate = (value) => {
     const v = value.trim()
     if (!v) return { type: 'validation', message: 'タスクを入力してください。' }
@@ -12,11 +14,12 @@ export default function TodoInput({ onAddTodo }) {
     return null
   }
 
+  // 追加ボタン押下（または Enter）時の処理
   const handleAdd = () => {
     const err = validate(text)
     if (err) {
       setError(err)
-      // 自動消去
+  // メッセージの自動消去
       setTimeout(() => setError(null), 2500)
       return
     }
@@ -29,6 +32,7 @@ export default function TodoInput({ onAddTodo }) {
     setText('')
   }
 
+  // Enter で追加（フォーム送信を抑止）
   const onKeyDown = (e) => {
     if (e.key === 'Enter') {
       e.preventDefault()

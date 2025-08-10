@@ -1,3 +1,4 @@
+// Todo 一覧を表示。空状態のメッセージもここで処理します。
 import React from 'react'
 import TodoItem from './TodoItem'
 import styles from '../styles/TodoApp.module.css'

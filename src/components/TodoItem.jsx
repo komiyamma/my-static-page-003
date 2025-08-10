@@ -1,3 +1,4 @@
+// 個別の Todo 行。チェックで完了切替、ボタンで削除します。
 import React from 'react'
 import styles from '../styles/TodoApp.module.css'
 
@@ -5,7 +6,8 @@ export default function TodoItem({ todo, onToggle, onDelete }) {
   return (
     <li className={styles.item}>
       <label className={styles.itemLabel}>
-        <input
+  {/* チェックボックスはアクセシビリティのため aria-label を設定 */}
+  <input
           type="checkbox"
           checked={todo.done}
           onChange={() => onToggle(todo.id)}
