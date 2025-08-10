@@ -1,4 +1,4 @@
-# my_static-page-002
+# my-static-page-003
 
 [![CI](https://github.com/komiyamma/my-static-page-003/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/komiyamma/my-static-page-003/actions/workflows/ci.yml)
 [![pkg.json version](https://img.shields.io/github/package-json/v/komiyamma/my-static-page-003?label=app%20version&logo=nodedotjs)](https://github.com/komiyamma/my-static-page-003/blob/main/package.json)
