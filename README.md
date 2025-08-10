@@ -1,5 +1,7 @@
 # my_static-page-002
 
+[![CI](https://github.com/komiyamma/my-static-page-003/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/komiyamma/my-static-page-003/actions/workflows/ci.yml)
+
 Vanilla JS + React site with Firebase.
 
 ## Stack
