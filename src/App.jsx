@@ -1,17 +1,48 @@
+import { useImmerReducer } from "use-immer"
+import { current } from "use-immer"
+
+function reducer(draft, action) {
+  switch (action.type) {
+    case "increment_age":
+      draft.age++;
+      return;
+    case "change_name":
+      draft.name = action.payload;
+      return;
+    default:
+      return;
+ }
+}
+
 export default function App() {
+  const [state, dispatch] = useImmerReducer(reducer, {
+    name: "John Doe",
+    age: 30
+  });
+
   return (
-    <div style={{
-      fontFamily: 'system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji"',
-      padding: '2rem',
-      lineHeight: 1.6
-    }}>
-      <h1>React + Firebase App Hosting</h1>
-      <p>このプロジェクトは Vite + React と Express サーバで構成され、Firebase App Hosting を前提にしています。</p>
-      <ul>
-        <li>開発: <code>npm run dev</code>（Vite）</li>
-        <li>ビルド: <code>npm run build</code></li>
-        <li>実行: <code>npm start</code>（dist を Express で配信）</li>
-      </ul>
+    <div>
+      <h2>Profile</h2>
+      <p>Name: {state.name}</p>
+      <p>Age: {state.age}</p>
+      <div style={{ marginTop: 12 }}>
+        <label>
+          Name:
+          <input
+            aria-label="name"
+            style={{ marginLeft: 8 }}
+            value={state.name}
+            onChange={(e) =>
+              dispatch({ type: "change_name", payload: e.target.value })
+            }
+          />
+        </label>
+      </div>
+      <div style={{ marginTop: 8 }}>
+        <button onClick={() => dispatch({ type: "increment_age" })}>
+          +1 year
+        </button>
+      </div>
     </div>
-  )
+  );
 }

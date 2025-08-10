@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "engines": { "node": ">=18" },
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -14,7 +16,8 @@
     "compression": "^1.7.4",
     "express": "^4.19.2",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "use-immer": "^0.11.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.0",
