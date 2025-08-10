@@ -4,23 +4,42 @@
 [![pkg.json version](https://img.shields.io/github/package-json/v/komiyamma/my-static-page-003?label=app%20version&logo=nodedotjs)](https://github.com/komiyamma/my-static-page-003/blob/main/package.json)
 [![release](https://img.shields.io/github/v/release/komiyamma/my-static-page-003?sort=semver&display_name=tag&logo=github)](https://github.com/komiyamma/my-static-page-003/releases)
 
-Vanilla JS + React site with Firebase.
+Vanilla JS + React + Firebase を用いたシンプルなサンプルアプリです。
 
-## Stack
+## 技術スタック
 
-- React (without CRA; bundler: Vite)
-- Vanilla JS utilities
-- Firebase App Hosting (Node container + Express static server)
+- React（CRA なし、ビルドは Vite）
+- Vanilla JS のユーティリティ
+- Firebase App Hosting（Node コンテナ + Express の静的配信）
 
-## Getting Started
+## セットアップ
 
-Initialize Git and install Node.js LTS (>=18). Project scaffolding will be added next.
+前提: Node.js 18 以上
 
-## Develop
+インストール（初回のみ）:
 
-- 開発サーバ: `npm run dev`
+```bash
+npm ci
+```
+
+## 開発
+
+- 開発サーバ起動: `npm run dev`
 - 本番ビルド: `npm run build`
 - ローカル実行（本番想定）: `npm start`
+
+### デバッグ（VS Code）
+
+- F5 で Vite の開発サーバが起動し、Chrome デバッガが自動で接続します。
+
+### テスト
+
+- 実行: `npm run test`
+- 対話 UI: `npm run test:ui`
+
+## CI（GitHub Actions）
+
+`main` への push / PR 時に Vitest が自動実行されます。上部のバッジで最新ステータスを確認できます。
 
 ## Firebase App Hosting
 
